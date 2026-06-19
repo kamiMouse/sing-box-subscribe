@@ -1,7 +1,7 @@
-requests
-paramiko
-scp
-chardet
-PyYAML
+flask>=3.0,<4.0                                                                                                                    
+requests                                                                                                                           
+paramiko                                                                                                                           
+scp                                                                                                                                
+chardet                                                                                                                            
+PyYAML                                                                                                                             
 ruamel.yaml
-Flask==2.3.2
