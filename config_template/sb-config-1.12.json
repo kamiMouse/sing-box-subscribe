@@ -59,10 +59,7 @@
         "rule_set": "geosite-cn",
         "server": "local"
       },
-      {
-        "domain_suffix": ["shanghaicang.com.cn"],
-        "server": "local"
-      },
+
       {
         "type": "logical",
         "mode": "and",
@@ -526,12 +523,12 @@
         "outbound": "Global"
       },
       {
-        "rule_set": ["geoip-cn", "geosite-cn"],
-        "outbound": "China"
+        "domain_suffix": ["shanghaicang.com.cn"],
+        "outbound": "OpenVPN"
       },
       {
-        "rule_set": "ypc-vpn",
-        "outbound": "OpenVPN"
+        "rule_set": ["geoip-cn", "geosite-cn"],
+        "outbound": "China"
       }
     ],
     "rule_set": [
@@ -744,12 +741,6 @@
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
         "download_detour": "direct"
-      },
-      {
-        "tag": "ypc-vpn",
-        "type": "local",
-        "format": "binary",
-        "path": "./rule_sets/ypc-vpn.srs"
       }
     ]
   }

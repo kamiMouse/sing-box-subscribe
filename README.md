@@ -43,22 +43,15 @@ docker run -p 5000:5000 sing-box:latest
 6. "https://testingcf.jsdelivr.net"
 ```
 
-### 本地规则集路径说明
+### OpenVPN 内网域名直通
 
-本项目模板中引用了本地规则集 `rule_sets/ypc-vpn.srs`（如 `shanghaicang.com.cn` 走 OpenVPN）。
+部分模板（如 `config_template_groups_rule_set_tun_fakeip`、`sb-config-1.12`、`sb-config-1.14`）已硬编码以下规则，用于在 sing-box TUN 启用时让指定域名走 OpenVPN 接口：
 
-由于 SFA / sing-box 客户端在加载配置时会将配置复制到自身工作目录（如 macOS 上的 `Library/Caches/Working/`），**相对路径 `./rule_sets/ypc-vpn.srs` 会解析失败**。使用前请根据实际存放位置修改为**绝对路径**，例如：
+- **出站**：`OpenVPN`（`type: direct`，绑定 `utun6`）
+- **路由规则**：`domain_suffix: shanghaicang.com.cn → OpenVPN`
 
-```json
-{
-  "tag": "ypc-vpn",
-  "type": "local",
-  "format": "binary",
-  "path": "/Users/kami/Documents/ypc/sing-box-subscribe/rule_sets/ypc-vpn.srs"
-}
-```
-
-若需跨设备使用，建议将 `.srs` 文件上传到可访问的 URL，并改为 `type: remote` 引用。
+如果你的 OpenVPN 接口名不是 `utun6`，请修改模板中 `OpenVPN` outbond 的 `bind_interface`。
+如果你的内网域名不同，请同时修改路由规则中的 `domain_suffix`。
 
 ### 根据已有的qx，surge，loon，clash规则列表自定义规则集[https://github.com/Toperlock/sing-box-geosite](https://github.com/Toperlock/sing-box-geosite)
 
