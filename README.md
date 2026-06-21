@@ -124,6 +124,20 @@ docker run -p 5000:5000 sing-box:latest
   ]
 }
 ```
+### ⚠️ OpenVPN 内网服务直连规则集 (ypc-vpn)
+
+本项目内置了 `rule_sets/ypc-vpn.srs` 规则集，用于在 TUN 模式下强制 `*.shanghaicang.com.cn` 流量走 OpenVPN 接口（`utun6`）。
+
+**使用前需要根据你的环境修改模板中的规则集路径：**
+
+模板中 `rule_set` 的 `path` 默认使用绝对路径（如 `/Users/kami/Documents/ypc/sing-box-subscribe/rule_sets/ypc-vpn.srs`）。
+
+因为 SFA/SFM 客户端会把配置文件复制到 `Library/Caches/Working/` 下运行，相对路径会失效。请根据你的实际部署位置修改为：
+
+- **本地使用**：改为你本机上的绝对路径
+- **远程/服务器部署**：改为远程 URL（如 `https://raw.githubusercontent.com/用户名/sing-box-subscribe/main/rule_sets/ypc-vpn.srs`）+ `type: remote`
+- **合入现有规则集**：也可以把 `ypc-vpn.json` 的内容合并到你自己的规则集文件中
+
 配置文件添加源文件规则集：
 ```
 {
