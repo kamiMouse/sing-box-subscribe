@@ -43,6 +43,23 @@ docker run -p 5000:5000 sing-box:latest
 6. "https://testingcf.jsdelivr.net"
 ```
 
+### 本地规则集路径说明
+
+本项目模板中引用了本地规则集 `rule_sets/ypc-vpn.srs`（如 `shanghaicang.com.cn` 走 OpenVPN）。
+
+由于 SFA / sing-box 客户端在加载配置时会将配置复制到自身工作目录（如 macOS 上的 `Library/Caches/Working/`），**相对路径 `./rule_sets/ypc-vpn.srs` 会解析失败**。使用前请根据实际存放位置修改为**绝对路径**，例如：
+
+```json
+{
+  "tag": "ypc-vpn",
+  "type": "local",
+  "format": "binary",
+  "path": "/Users/kami/Documents/ypc/sing-box-subscribe/rule_sets/ypc-vpn.srs"
+}
+```
+
+若需跨设备使用，建议将 `.srs` 文件上传到可访问的 URL，并改为 `type: remote` 引用。
+
 ### 根据已有的qx，surge，loon，clash规则列表自定义规则集[https://github.com/Toperlock/sing-box-geosite](https://github.com/Toperlock/sing-box-geosite)
 
 ### wechat规则集源文件写法：
