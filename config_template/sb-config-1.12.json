@@ -48,14 +48,6 @@
         "server": "google"
       },
       {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "rule_set": "geosite-cn",
-        "server": "fakeip"
-      },
-      {
         "rule_set": "geosite-cn",
         "server": "local"
       },
@@ -79,7 +71,11 @@
           "A",
           "AAAA"
         ],
+        "rule_set": "geosite-geolocation-!cn",
         "server": "fakeip"
+      },
+      {
+        "server": "google"
       }
     ],
     "independent_cache": true,

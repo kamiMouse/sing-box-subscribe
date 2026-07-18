@@ -68,15 +68,16 @@
         "server": "ggdns"
       },
       {
+        "rule_set": "geosite-cn",
+        "server": "alidns"
+      },
+      {
         "query_type": [
           "A",
           "AAAA"
         ],
+        "rule_set": "geosite-geolocation-!cn",
         "server": "fakeip"
-      },
-      {
-        "rule_set": "geosite-cn",
-        "server": "local"
       },
       {
         "action": "evaluate",
