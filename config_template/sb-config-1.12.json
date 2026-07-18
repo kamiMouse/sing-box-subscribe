@@ -48,7 +48,10 @@
         "server": "google"
       },
       {
-        "query_type": ["A", "AAAA"],
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
         "rule_set": "geosite-cn",
         "server": "fakeip"
       },
@@ -56,7 +59,6 @@
         "rule_set": "geosite-cn",
         "server": "local"
       },
-
       {
         "type": "logical",
         "mode": "and",
@@ -73,7 +75,10 @@
         "client_subnet": "114.114.114.114/24"
       },
       {
-        "query_type": ["A", "AAAA"],
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
         "server": "fakeip"
       }
     ],
@@ -84,7 +89,10 @@
     {
       "tag": "tun-in",
       "type": "tun",
-      "address": ["172.19.0.0/30", "fdfe:dcba:9876::0/126"],
+      "address": [
+        "172.19.0.0/30",
+        "fdfe:dcba:9876::0/126"
+      ],
       "stack": "system",
       "auto_route": true,
       "strict_route": true,
@@ -107,38 +115,71 @@
     {
       "tag": "Proxy",
       "type": "selector",
-      "outbounds": ["auto", "direct", "{all}", "HongKong-urltest"]
+      "outbounds": [
+        "auto",
+        "HongKong-Auto",
+        "TaiWan-Auto",
+        "Singapore-Auto",
+        "Japan-Auto",
+        "America-Auto",
+        "Others-Auto",
+        "direct",
+        "{all}"
+      ]
     },
     {
       "tag": "OpenAI",
       "type": "selector",
-      "outbounds": ["TaiWan", "Singapore", "Japan", "America", "Others"],
+      "outbounds": [
+        "HongKong",
+        "HongKong-Auto",
+        "TaiWan",
+        "TaiWan-Auto",
+        "Singapore",
+        "Singapore-Auto",
+        "Japan",
+        "Japan-Auto",
+        "America",
+        "America-Auto",
+        "Others",
+        "Others-Auto"
+      ],
       "default": "America"
     },
     {
       "tag": "Google",
       "type": "selector",
       "outbounds": [
-        "HongKong-urltest",
         "HongKong",
+        "HongKong-Auto",
         "TaiWan",
+        "TaiWan-Auto",
         "Singapore",
+        "Singapore-Auto",
         "Japan",
+        "Japan-Auto",
         "America",
-        "Others"
+        "America-Auto",
+        "Others",
+        "Others-Auto"
       ]
     },
     {
       "tag": "Telegram",
       "type": "selector",
       "outbounds": [
-        "HongKong-urltest",
         "HongKong",
+        "HongKong-Auto",
         "TaiWan",
+        "TaiWan-Auto",
         "Singapore",
+        "Singapore-Auto",
         "Japan",
+        "Japan-Auto",
         "America",
-        "Others"
+        "America-Auto",
+        "Others",
+        "Others-Auto"
       ]
     },
     {
@@ -146,11 +187,17 @@
       "type": "selector",
       "outbounds": [
         "HongKong",
+        "HongKong-Auto",
         "TaiWan",
+        "TaiWan-Auto",
         "Singapore",
+        "Singapore-Auto",
         "Japan",
+        "Japan-Auto",
         "America",
-        "Others"
+        "America-Auto",
+        "Others",
+        "Others-Auto"
       ]
     },
     {
@@ -158,33 +205,55 @@
       "type": "selector",
       "outbounds": [
         "HongKong",
+        "HongKong-Auto",
         "TaiWan",
+        "TaiWan-Auto",
         "Singapore",
+        "Singapore-Auto",
         "Japan",
+        "Japan-Auto",
         "America",
-        "Others"
+        "America-Auto",
+        "Others",
+        "Others-Auto"
       ]
     },
     {
       "tag": "BiliBili",
       "type": "selector",
-      "outbounds": ["direct", "HongKong", "TaiWan"]
+      "outbounds": [
+        "direct",
+        "HongKong",
+        "HongKong-Auto",
+        "TaiWan",
+        "TaiWan-Auto"
+      ]
     },
     {
       "tag": "Bahamut",
       "type": "selector",
-      "outbounds": ["TaiWan", "Proxy"]
+      "outbounds": [
+        "TaiWan",
+        "TaiWan-Auto",
+        "Proxy"
+      ]
     },
     {
       "tag": "Spotify",
       "type": "selector",
       "outbounds": [
         "HongKong",
+        "HongKong-Auto",
         "TaiWan",
+        "TaiWan-Auto",
         "Singapore",
+        "Singapore-Auto",
         "Japan",
+        "Japan-Auto",
         "America",
-        "Others"
+        "America-Auto",
+        "Others",
+        "Others-Auto"
       ],
       "default": "America"
     },
@@ -192,12 +261,16 @@
       "tag": "TikTok",
       "type": "selector",
       "outbounds": [
-        "HongKong-urltest",
         "HongKong",
+        "HongKong-Auto",
         "TaiWan",
+        "TaiWan-Auto",
         "Singapore",
+        "Singapore-Auto",
         "Japan",
-        "America"
+        "Japan-Auto",
+        "America",
+        "America-Auto"
       ],
       "default": "Japan"
     },
@@ -206,11 +279,17 @@
       "type": "selector",
       "outbounds": [
         "HongKong",
+        "HongKong-Auto",
         "TaiWan",
+        "TaiWan-Auto",
         "Singapore",
+        "Singapore-Auto",
         "Japan",
+        "Japan-Auto",
         "America",
-        "Others"
+        "America-Auto",
+        "Others",
+        "Others-Auto"
       ]
     },
     {
@@ -218,11 +297,17 @@
       "type": "selector",
       "outbounds": [
         "HongKong",
+        "HongKong-Auto",
         "TaiWan",
+        "TaiWan-Auto",
         "Singapore",
+        "Singapore-Auto",
         "Japan",
+        "Japan-Auto",
         "America",
-        "Others"
+        "America-Auto",
+        "Others",
+        "Others-Auto"
       ]
     },
     {
@@ -231,11 +316,17 @@
       "outbounds": [
         "direct",
         "HongKong",
+        "HongKong-Auto",
         "TaiWan",
+        "TaiWan-Auto",
         "Singapore",
+        "Singapore-Auto",
         "Japan",
+        "Japan-Auto",
         "America",
-        "Others"
+        "America-Auto",
+        "Others",
+        "Others-Auto"
       ]
     },
     {
@@ -244,11 +335,17 @@
       "outbounds": [
         "direct",
         "HongKong",
+        "HongKong-Auto",
         "TaiWan",
+        "TaiWan-Auto",
         "Singapore",
+        "Singapore-Auto",
         "Japan",
+        "Japan-Auto",
         "America",
-        "Others"
+        "America-Auto",
+        "Others",
+        "Others-Auto"
       ]
     },
     {
@@ -257,11 +354,17 @@
       "outbounds": [
         "direct",
         "HongKong",
+        "HongKong-Auto",
         "TaiWan",
+        "TaiWan-Auto",
         "Singapore",
+        "Singapore-Auto",
         "Japan",
+        "Japan-Auto",
         "America",
-        "Others"
+        "America-Auto",
+        "Others",
+        "Others-Auto"
       ]
     },
     {
@@ -269,87 +372,127 @@
       "type": "selector",
       "outbounds": [
         "HongKong",
+        "HongKong-Auto",
         "TaiWan",
+        "TaiWan-Auto",
         "Singapore",
+        "Singapore-Auto",
         "Japan",
+        "Japan-Auto",
         "America",
-        "Others"
+        "America-Auto",
+        "Others",
+        "Others-Auto"
       ]
     },
     {
       "tag": "Global",
       "type": "selector",
       "outbounds": [
-        "HongKong-urltest",
         "HongKong",
+        "HongKong-Auto",
         "TaiWan",
+        "TaiWan-Auto",
         "Singapore",
+        "Singapore-Auto",
         "Japan",
+        "Japan-Auto",
         "America",
+        "America-Auto",
         "Others",
+        "Others-Auto",
         "direct"
       ]
     },
     {
       "tag": "China",
       "type": "selector",
-      "outbounds": ["direct", "Proxy"]
+      "outbounds": [
+        "direct",
+        "Proxy"
+      ]
     },
     {
       "tag": "HongKong",
       "type": "selector",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
-        { "action": "include", "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"] }
-      ]
-    },
-    {
-      "tag": "HongKong-urltest",
-      "type": "urltest",
-      "outbounds": ["{all}"],
-      "filter": [
-        { "action": "include", "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"] }
+        {
+          "action": "include",
+          "keywords": [
+            "🇭🇰|HK|hk|香港|港|HongKong"
+          ]
+        }
       ]
     },
     {
       "tag": "TaiWan",
       "type": "selector",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
-        { "action": "include", "keywords": ["🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"] }
+        {
+          "action": "include",
+          "keywords": [
+            "🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"
+          ]
+        }
       ]
     },
     {
       "tag": "Singapore",
       "type": "selector",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
-        { "action": "include", "keywords": ["🇸🇬|SG|sg|新加坡|狮|Singapore"] }
+        {
+          "action": "include",
+          "keywords": [
+            "🇸🇬|SG|sg|新加坡|狮|Singapore"
+          ]
+        }
       ]
     },
     {
       "tag": "Japan",
       "type": "selector",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
-        { "action": "include", "keywords": ["🇯🇵|JP|jp|日本|日|Japan"] }
+        {
+          "action": "include",
+          "keywords": [
+            "🇯🇵|JP|jp|日本|日|Japan"
+          ]
+        }
       ]
     },
     {
       "tag": "America",
       "type": "selector",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
         {
           "action": "include",
-          "keywords": ["🇺🇸|US|us|美国|美|United States|California"]
+          "keywords": [
+            "🇺🇸|US|us|美国|美|United States|California"
+          ]
         }
       ]
     },
     {
       "tag": "Others",
       "type": "selector",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
         {
           "action": "exclude",
@@ -360,11 +503,126 @@
       ]
     },
     {
+      "tag": "HongKong-Auto",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇭🇰|HK|hk|香港|港|HongKong"
+          ]
+        }
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 50
+    },
+    {
+      "tag": "TaiWan-Auto",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"
+          ]
+        }
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 50
+    },
+    {
+      "tag": "Singapore-Auto",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇸🇬|SG|sg|新加坡|狮|Singapore"
+          ]
+        }
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 50
+    },
+    {
+      "tag": "Japan-Auto",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇯🇵|JP|jp|日本|日|Japan"
+          ]
+        }
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 50
+    },
+    {
+      "tag": "America-Auto",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇺🇸|US|us|美国|美|United States|California"
+          ]
+        }
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 50
+    },
+    {
+      "tag": "Others-Auto",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "exclude",
+          "keywords": [
+            "🇭🇰|HK|hk|香港|香|🇹🇼|TW|tw|台湾|台|🇸🇬|SG|sg|新加坡|狮|🇯🇵|JP|jp|日本|日|🇺🇸|US|us|美国|美"
+          ]
+        }
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 50
+    },
+    {
       "tag": "auto",
       "type": "urltest",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
-        { "action": "exclude", "keywords": ["网站|地址|剩余|过期|时间|有效"] }
+        {
+          "action": "exclude",
+          "keywords": [
+            "网站|地址|剩余|过期|时间|有效"
+          ]
+        }
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -373,11 +631,6 @@
     {
       "type": "direct",
       "tag": "direct"
-    },
-    {
-      "type": "direct",
-      "tag": "OpenVPN",
-      "bind_interface": "utun6"
     }
   ],
   "route": {
@@ -388,7 +641,10 @@
     "final": "Proxy",
     "rules": [
       {
-        "inbound": ["tun-in", "mixed-in"],
+        "inbound": [
+          "tun-in",
+          "mixed-in"
+        ],
         "action": "sniff"
       },
       {
@@ -449,15 +705,24 @@
         "outbound": "Google"
       },
       {
-        "rule_set": ["geoip-telegram", "geosite-telegram"],
+        "rule_set": [
+          "geoip-telegram",
+          "geosite-telegram"
+        ],
         "outbound": "Telegram"
       },
       {
-        "rule_set": ["geoip-twitter", "geosite-twitter"],
+        "rule_set": [
+          "geoip-twitter",
+          "geosite-twitter"
+        ],
         "outbound": "Twitter"
       },
       {
-        "rule_set": ["geoip-facebook", "geosite-facebook"],
+        "rule_set": [
+          "geoip-facebook",
+          "geosite-facebook"
+        ],
         "outbound": "Facebook"
       },
       {
@@ -477,7 +742,10 @@
         "outbound": "TikTok"
       },
       {
-        "rule_set": ["geoip-netflix", "geosite-netflix"],
+        "rule_set": [
+          "geoip-netflix",
+          "geosite-netflix"
+        ],
         "outbound": "Netflix"
       },
       {
@@ -485,7 +753,11 @@
         "outbound": "Disney+"
       },
       {
-        "rule_set": ["geoip-apple", "geosite-apple", "geosite-amazon"],
+        "rule_set": [
+          "geoip-apple",
+          "geosite-apple",
+          "geosite-amazon"
+        ],
         "outbound": "Apple"
       },
       {
@@ -493,11 +765,17 @@
         "outbound": "Microsoft"
       },
       {
-        "rule_set": ["geosite-category-games", "geosite-dmm"],
+        "rule_set": [
+          "geosite-category-games",
+          "geosite-dmm"
+        ],
         "outbound": "Games"
       },
       {
-        "rule_set": ["geosite-hbo", "geosite-primevideo"],
+        "rule_set": [
+          "geosite-hbo",
+          "geosite-primevideo"
+        ],
         "outbound": "Streaming"
       },
       {
@@ -505,11 +783,10 @@
         "outbound": "Global"
       },
       {
-        "domain_suffix": ["shanghaicang.com.cn"],
-        "outbound": "OpenVPN"
-      },
-      {
-        "rule_set": ["geoip-cn", "geosite-cn"],
+        "rule_set": [
+          "geoip-cn",
+          "geosite-cn"
+        ],
         "outbound": "China"
       }
     ],
@@ -519,210 +796,240 @@
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-openai",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/Toperlock/sing-box-geosite@main/rule/OpenAI.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-youtube",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geoip-google",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/google.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-google",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/google.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-github",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/github.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geoip-telegram",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/telegram.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-telegram",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/telegram.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geoip-twitter",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/twitter.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-twitter",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/twitter.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geoip-facebook",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/facebook.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-facebook",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/facebook.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-bilibili",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bilibili.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-bahamut",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bahamut.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-spotify",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/spotify.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-tiktok",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/tiktok.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geoip-netflix",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/netflix.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-netflix",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/netflix.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-disney",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/disney.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geoip-apple",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo-lite/geoip/apple.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-apple",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/apple.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-amazon",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/amazon.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-microsoft",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-category-games",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-games.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-dmm",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/dmm.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-hbo",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/hbo.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-primevideo",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/primevideo.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-geolocation-!cn",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geoip-cn",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       },
       {
         "tag": "geosite-cn",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
-        "download_detour": "direct"
+        "download_detour": "direct",
+        "update_interval": "24h"
       }
     ]
   }
